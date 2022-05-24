@@ -17,7 +17,8 @@ class CreateEmployeesTable extends Migration
             $table->id();
             $table->string("name",20);
             $table->string("email",50)->unique();
-            $table->string("phone_no",20);
+            $table->text("phone_no");
+            $table->text("address");
             $table->enum("gender",["male", "female", "others"]);
             $table->integer("age")->unsigned();
             $table->foreignId("department_id")->constrained('departments')->onDelete('cascade')->onUpdate('cascade');;

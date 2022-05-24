@@ -16,6 +16,7 @@ class EmployeeController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:employees,email',
             'phone_no' => 'required',
+            'address'  => 'required',
             'gender' => 'required',
             'age' => 'required',
             'department_id'=> 'required'
@@ -26,7 +27,8 @@ class EmployeeController extends Controller
 
         $employee->name = $request->name;
         $employee->email = $request->email;
-        $employee->phone_no = $request->phone_no;
+        $employee->phone_no = json_encode($request->phone_no);
+        $employee->address = json_encode($request->address);
         $employee->gender = $request->gender;
         $employee->age = $request->age;
         $employee->department_id = $request->department_id;
@@ -82,7 +84,8 @@ class EmployeeController extends Controller
             $employee = Employee::find($id);
             $employee->name = !empty($request->name) ? $request->name : $employee->name;
             $employee->email = !empty($request->email) ? $request->email : $employee->email;
-            $employee->phone_no = !empty($request->phone_no) ? $request->phone_no : $employee->phone_no;
+            $employee->phone_no = !empty($request->phone_no) ? json_encode($request->phone_no) : $employee->phone_no;
+            $employee->address = !empty($request->address) ? json_encode($request->address) : $employee->address;
             $employee->gender = !empty($request->gender) ? $request->gender : $employee->gender;
             $employee->age = !empty($request->age) ? $request->age : $employee->age;
             $employee->department_id = !empty($request->department_id) ? $request->department_id : $employee->department_id;
