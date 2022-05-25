@@ -10,16 +10,13 @@ class DepartmentController extends Controller
 {
     //Create Department API
     public function createDepartment(Request $request){
-
-       
-
         //validation
         $this->validate($request, [
             'name'=> 'required|unique:departments'
         ]);
         
-        //create data
 
+        //create data
         $department = new Department();
 
         $department->name = $request->name;

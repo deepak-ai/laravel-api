@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use Illuminate\Support\Facades\Validator;
 
 class EmployeeController extends Controller
 {
@@ -14,7 +15,7 @@ class EmployeeController extends Controller
         //validate
         $this->validate($request,[
             'name' => 'required',
-            'email' => 'required|email|unique:employees,email',
+            'email' => 'required|email|unique:employees',
             'phone_no' => 'required',
             'address'  => 'required',
             'gender' => 'required',

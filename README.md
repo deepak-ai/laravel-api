@@ -1,61 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Creating a Department
+curl --location --request POST 'http://laravel-api.local/api/add-department' \
+--header 'Accept: application/json' \
+--header 'Content-Transfer-Encoding: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: XSRF-TOKEN=eyJpdiI6ImF2cGVxZ2RsalJ1QjM4NXlrY0lVNHc9PSIsInZhbHVlIjoiSnRRTUZORW45ZmZUbUFLVFFRd2N6ZUhKdjE0NksrSVhnczhyM3NOVis4ZGltb2J4dDN0TkJxeVJ5bkRsYnc3UHRqbHBSa3c5K1dERkF6MVBqZEg5UEFtSzluU3NLWjl1N0FDOWRrZmxBdWdwbU54VnUvckRTVk9FQUpQNlgrZXkiLCJtYWMiOiJhMmYwZDc5NDE3MWQ3ZmY2M2ZhZjQzZmY2YTEwZmVlM2IyYmNhYmEwOTdkNDBlNDc2M2FmNWE4ZWFiZDJmODYzIiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6InNPTkYvOC9NQ1dJTG8zVEhuRkgzTUE9PSIsInZhbHVlIjoib0czdVVXaWtXOUJlcWU5WStoSTBDQytlZ2oxU2hHcGZTMWdxaUJQMlNjR3VFb1dCRU9zcE90aWRvRW00a2cvVGg3Kzd6RzFjL2YvNjVQcCs1aU8ySEI5Q21TczcxOUVMeW04bWs3WTgyKzI1aHA4WSttNTdZSmhjK0NJWTdNOUgiLCJtYWMiOiJlZjRkZmQwMjdhNTg1YTJjYTg4MzZiYzNhMTgyMDAzYjk2YzVjYTExOTJlNTkxMjk4NTc0OGQyNmM4NGFlZDM1IiwidGFnIjoiIn0%3D' \
+--data-raw '{"name":"IT", "description": "Department for IT related services"}'
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Response: {"status":true,"message":"Department created successfully"}
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Adding an Employee
+curl --location --request POST 'http://laravel-api.local/api/add-employee' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: XSRF-TOKEN=eyJpdiI6ImF2cGVxZ2RsalJ1QjM4NXlrY0lVNHc9PSIsInZhbHVlIjoiSnRRTUZORW45ZmZUbUFLVFFRd2N6ZUhKdjE0NksrSVhnczhyM3NOVis4ZGltb2J4dDN0TkJxeVJ5bkRsYnc3UHRqbHBSa3c5K1dERkF6MVBqZEg5UEFtSzluU3NLWjl1N0FDOWRrZmxBdWdwbU54VnUvckRTVk9FQUpQNlgrZXkiLCJtYWMiOiJhMmYwZDc5NDE3MWQ3ZmY2M2ZhZjQzZmY2YTEwZmVlM2IyYmNhYmEwOTdkNDBlNDc2M2FmNWE4ZWFiZDJmODYzIiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6InNPTkYvOC9NQ1dJTG8zVEhuRkgzTUE9PSIsInZhbHVlIjoib0czdVVXaWtXOUJlcWU5WStoSTBDQytlZ2oxU2hHcGZTMWdxaUJQMlNjR3VFb1dCRU9zcE90aWRvRW00a2cvVGg3Kzd6RzFjL2YvNjVQcCs1aU8ySEI5Q21TczcxOUVMeW04bWs3WTgyKzI1aHA4WSttNTdZSmhjK0NJWTdNOUgiLCJtYWMiOiJlZjRkZmQwMjdhNTg1YTJjYTg4MzZiYzNhMTgyMDAzYjk2YzVjYTExOTJlNTkxMjk4NTc0OGQyNmM4NGFlZDM1IiwidGFnIjoiIn0%3D' \
+--data-raw '{"name": "Mohit Kumar", "email":"mohitkumar946@gmail.com", "phone_no":["7007284327", "8604480348"],"address":["96-A Bhawani Nagar", "472-B Shivpuram"], "age":"27", "gender":"male", "department_id":"1"}'
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Response: {"status":true,"message":"Employee created successfully"}
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Get the List of All Departments
+curl --location --request GET 'http://laravel-api.local/api/list-departments'
 
-## Laravel Sponsors
+Response: {"status":true,"message":"Listing departments","data":[{"id":1,"name":"HR1","description":"Department for HR related services","created_at":"2022-05-24T19:15:13.000000Z","updated_at":"2022-05-24T19:19:18.000000Z"},{"id":2,"name":"IT","description":"Department for IT related services","created_at":"2022-05-24T19:15:59.000000Z","updated_at":"2022-05-24T19:15:59.000000Z"}]}
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+Get Details of a Single Department
+curl --location --request GET 'http://laravel-api.local/api/department/1'
 
-## Contributing
+Response: {"status":true,"message":"Department Found","data":{"id":1,"name":"HR1","description":"Department for HR related services","created_at":"2022-05-24T19:15:13.000000Z","updated_at":"2022-05-24T19:19:18.000000Z"}}
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+Get List of All employees
+curl --location --request GET 'http://laravel-api.local/api/list-employees'
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Response: {"status":true,"message":"Listing Employees","data":[{"id":1,"name":"Deepak Singh Parihar","email":"deepakparihar946@gmail.com","phone_no":"[\"7007284327\",\"8604480348\"]","address":"[\"96-A Bhawani Nagar\",\"472-B Shivpuram\"]","gender":"male","age":27,"department_id":2,"created_at":"2022-05-24T19:16:51.000000Z","updated_at":"2022-05-24T19:21:37.000000Z"},{"id":2,"name":"Mohit Kumar","email":"mohitkumar946@gmail.com","phone_no":"[\"7007284327\",\"8604480348\"]","address":"[\"96-A Bhawani Nagar\",\"472-B Shivpuram\"]","gender":"male","age":27,"department_id":1,"created_at":"2022-05-24T19:29:30.000000Z","updated_at":"2022-05-24T19:29:30.000000Z"}]}
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Get Details of Single Employee
+curl --location --request GET 'http://laravel-api.local/api/employee/2'
 
-## License
+Response: {"status":true,"message":"Employee Found","data":{"id":2,"name":"Mohit Kumar","email":"mohitkumar946@gmail.com","phone_no":"[\"7007284327\",\"8604480348\"]","address":"[\"96-A Bhawani Nagar\",\"472-B Shivpuram\"]","gender":"male","age":27,"department_id":1,"created_at":"2022-05-24T19:29:30.000000Z","updated_at":"2022-05-24T19:29:30.000000Z"}}
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+Updating a Department
+curl --location --request PUT 'http://laravel-api.local/api/update-department/1' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name" : "HR1"}'
+
+Response: {"status":true,"message":"Department Updated succsessfully"}
+
+
+Updating details of an Employee
+curl --location --request PUT 'http://laravel-api.local/api/update-employee/1' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name" : "Deepak Singh Parihar"}'
+
+Response: {"status":true,"message":"Successfully updated the employee details"}
+
+
+Deleting a Department
+curl --location --request DELETE 'http://laravel-api.local/api/delete-department/1' \
+--header 'Cookie: XSRF-TOKEN=eyJpdiI6InJsREpJNTAyVGFMRjNQbXU2Vy9DdWc9PSIsInZhbHVlIjoia1UyZS82aTUvUFVBUUd0dzJJQlU3c05DQ2hndjhtTWh6ai9sVExJQUgzMm5OcXAzWmZXdTVoazdtNkQ3Nm9jT0lWWkNtSmFjK2hUYWxOUm9vU1RwUHRhVDZYNHQ0a0lIaFhSK3hoQ0dDY3hWOW0zWGcvWEFlYjE1aHlrNFlOR2wiLCJtYWMiOiI2Y2VhODMyN2VhZGFmM2NmMDZhZjUxMjRlYjk1NGE4ZGJlYTc2YzIwZjFmNjY2NDc4YmRjMTZiMTI5N2U1YWY2IiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6InFvUlN4UXJtcXRnWmhZNDBDbUhUblE9PSIsInZhbHVlIjoiMWJGd0lBblBsTWZPU2Z1ZUFmcExwQkpoMzdmbUNOSCt6cUUyanlJaDNLb2R1NnJRZTJDbkxSckxxL1U2bk5QUkkvdERJamtwQmdUUGVQMkIrN0xPbEFyZzI3MUx1VUx1R1NuQkQ1NFozUk1uWjRYZ1JESXVpNjcvbWh0eEw3LzIiLCJtYWMiOiI1MDk0NDIzYjIyYzUzN2IyMTQ4MDM3MDM1YmEyZWEzOTE2ODVjM2VjMzg1ZTg3Y2NlYWRhOWU3ZDBmYjNkNDIwIiwidGFnIjoiIn0%3D'
+
+Response: {"status":true,"message":"Department deleted succsessfully"}
+
+
+Deleting an Employee
+curl --location --request DELETE 'http://laravel-api.local/api/delete-employee/2' \
+--header 'Cookie: XSRF-TOKEN=eyJpdiI6InJsREpJNTAyVGFMRjNQbXU2Vy9DdWc9PSIsInZhbHVlIjoia1UyZS82aTUvUFVBUUd0dzJJQlU3c05DQ2hndjhtTWh6ai9sVExJQUgzMm5OcXAzWmZXdTVoazdtNkQ3Nm9jT0lWWkNtSmFjK2hUYWxOUm9vU1RwUHRhVDZYNHQ0a0lIaFhSK3hoQ0dDY3hWOW0zWGcvWEFlYjE1aHlrNFlOR2wiLCJtYWMiOiI2Y2VhODMyN2VhZGFmM2NmMDZhZjUxMjRlYjk1NGE4ZGJlYTc2YzIwZjFmNjY2NDc4YmRjMTZiMTI5N2U1YWY2IiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6InFvUlN4UXJtcXRnWmhZNDBDbUhUblE9PSIsInZhbHVlIjoiMWJGd0lBblBsTWZPU2Z1ZUFmcExwQkpoMzdmbUNOSCt6cUUyanlJaDNLb2R1NnJRZTJDbkxSckxxL1U2bk5QUkkvdERJamtwQmdUUGVQMkIrN0xPbEFyZzI3MUx1VUx1R1NuQkQ1NFozUk1uWjRYZ1JESXVpNjcvbWh0eEw3LzIiLCJtYWMiOiI1MDk0NDIzYjIyYzUzN2IyMTQ4MDM3MDM1YmEyZWEzOTE2ODVjM2VjMzg1ZTg3Y2NlYWRhOWU3ZDBmYjNkNDIwIiwidGFnIjoiIn0%3D'
+
+Response: {"status":true,"message":"Department deleted succsessfully"}
+
+
+Search The Details of an Employee
+curl --location --request GET 'http://laravel-api.local/api/employee/q/mohit'
+
+Response: {"status":true,"message":"Search results are","data":[{"id":2,"name":"Mohit Kumar","email":"mohitkumar946@gmail.com","phone_no":"[\"7007284327\",\"8604480348\"]","address":"[\"96-A Bhawani Nagar\",\"472-B Shivpuram\"]","gender":"male","age":27,"department_id":1,"created_at":"2022-05-24T19:29:30.000000Z","updated_at":"2022-05-24T19:29:30.000000Z"}]}
+
+
+ Search For A Department
+curl --location --request GET 'http://laravel-api.local/api/department/q/IT'
+
+Response: {"status":true,"message":"Search results are","data":[{"id":2,"name":"IT","description":"Department for IT related services","created_at":"2022-05-24T19:15:59.000000Z","updated_at":"2022-05-24T19:15:59.000000Z"}]}
+
