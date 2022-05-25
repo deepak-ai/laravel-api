@@ -25,6 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('add-employee',[EmployeeController::class, 'createEmployee']);
 Route::get('list-employees',[EmployeeController::class, 'listEmployees']);
 Route::get('employee/{id}',[EmployeeController::class, 'getSingleEmployee']);
+Route::get('employee/q/{term}',[EmployeeController::class, 'searchEmployee']);
 Route::put('update-employee/{id}',[EmployeeController::class, 'updateEmployee']);
 Route::delete('delete-employee/{id}',[EmployeeController::class, 'deleteEmployee']);
 
@@ -32,5 +33,6 @@ Route::delete('delete-employee/{id}',[EmployeeController::class, 'deleteEmployee
 Route::post('add-department',[DepartmentController::class, 'createDepartment']);
 Route::get('list-departments',[DepartmentController::class, 'listDepartments']);
 Route::get('department/{id}',[DepartmentController::class, 'getSingleDepartment']);
+Route::get('department/q/{term}',[DepartmentController::class, 'searchDepartment']);
 Route::put('update-department/{id}',[DepartmentController::class, 'updateDepartment']);
 Route::delete('delete-department/{id}',[DepartmentController::class, 'deleteDepartment']);

@@ -120,4 +120,17 @@ class EmployeeController extends Controller
          }
 
     }
+
+
+    public function searchEmployee($term){
+
+        $employees = Employee::where('name','LIKE','%'.$term.'%')->get();
+
+        if(count($employees) > 0){
+            return response()->json(["status" => true, "message"=>"Search results are", "data"=>$employees], 200);
+        }else{
+            return response()->json(["status" => false, "message"=>"No Employee Found"], 404);
+        }
+
+    }
 }

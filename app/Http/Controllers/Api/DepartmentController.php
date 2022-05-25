@@ -108,4 +108,18 @@ class DepartmentController extends Controller
          }
 
     }
+
+
+    public function searchDepartment($term){
+
+        $departments = Department::where('name','LIKE','%'.$term.'%')->get();
+
+        if(count($departments) > 0){
+            return response()->json(["status" => true, "message"=>"Search results are", "data"=>$departments], 200);
+        }else{
+            return response()->json(["status" => false, "message"=>"No Department Found"], 404);
+        }
+
+
+    }
 }
